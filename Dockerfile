@@ -1,6 +1,6 @@
 FROM golang:1.18
 RUN git clone https://github.com/dutchdata/public.git
-WORKDIR /go/public
+WORKDIR /go/public/server/
 
 RUN go get github.com/labstack/echo/v4
 RUN go get github.com/aws/aws-sdk-go
@@ -17,4 +17,4 @@ RUN go get golang.org/x/text
 RUN go get github.com/jmespath/go-jmespath
 
 EXPOSE 8080
-CMD ["go","run","s3-tool.go"]
+CMD ["go","run","main.go"]
